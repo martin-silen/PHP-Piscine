@@ -1,7 +1,7 @@
 h1 {
 	text-align: center;
 	color: white;
-	font-size: 4em;
+	font-size:4vw;
 }
 html {
 	width: 100%;
@@ -15,25 +15,26 @@ body {
 }
 
 td {
-	width: 5%;	
+	width: auto;	
   	height: auto;
-  	padding: 3px;
 }
 .symbol {
-  	text-align:center;
-	font-size: 3em;
+  	text-align: center;
+	font-size: 2vw;
 }
 .vertical-align {
 	float: left;
   	vertical-align: bottom;
-  	font-size: 0.5em;
+  	font-size: 1vw;
+	  margin: 2%;
 }
 .weight {
 
 	float: right;
   	text-align: end;
   	vertical-align: bottom;
-  	font-size: 0.5em;
+  	font-size: 1vw;
+	  margin: 2%;
 }
 
 p {
@@ -47,65 +48,52 @@ p#only-number.vertical-align {
 }
 
 table {
- 	width: 90%;
+ 	width: 100%;
  	margin: auto;
   	height: auto;
 }
 
 .purple{
-  border:3px solid #8E44AD;
+  border: solid #8E44AD;
   background-color: #CFA1E5;
 }
 .blue{
   background-color: #74D5FB;
-  border:3px solid #446CB3;
+  border: solid #446CB3;
 }
 .green{
   background-color: #79D4B4;
-  border:3px solid #16A085;
+  border: solid #16A085;
 }
 .yellow{
   background-color: #F5D76E;
-  border:3px solid #F7CA18;
+  border: solid #F7CA18;
 }
 .gray{
   background-color: #BDC3C7;
-  border:3px solid #95A5A6;
+  border: solid #95A5A6;
 }
 .pink{
   background-color: #F2A4A5;
-  border:3px solid #E3638F;
+  border: solid #E3638F;
 }
 .dark-blue{
   background-color: #58A7DC;
-  border:3px solid #4B64AC;
+  border: solid #4B64AC;
 }
 .orange{
   background-color: #FCA85F;
-  border:3px solid #F9690E;
+  border: solid #F9690E;
 }
 .white{
   background-color: #ECF0F1;
-  border:3px solid #BFBFBF;
+  border: solid #BFBFBF;
 }
 .red{
   background-color: #F96874;
-  border:3px solid #CF000F;
+  border: solid #CF000F;
 }
 .turquoise{
   background-color: #58F9D9;
-  border:3px solid #2ABB9B;
-}
-
-@media only screen and (max-width: 1200px) {
-	table {
-		width: 20%;
- 		margin: auto;
-  		height: auto;
-	}
-	td {
-		width: 2%;	
-  		height: auto;
-  		padding: 3px;
-	}
+  border: solid #2ABB9B;
 }
