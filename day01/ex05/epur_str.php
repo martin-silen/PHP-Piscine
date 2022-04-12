@@ -1,7 +1,9 @@
+#!/usr/bin/php
 <?php
-	if ($argc != 2)
-		exit();
-	$str_word = preg_replace("/\s+", " ", $argv[$i]);
-	$str = trim($str_word);
-	echo ("$str\n");
+	if ($argc > 1)
+    {
+        $word = preg_split("/ +/", trim($argv[1]));
+        print_r(implode(" ", $word));
+        print("\n");
+    }
 ?>

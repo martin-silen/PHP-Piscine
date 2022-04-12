@@ -2,10 +2,12 @@
 <?PHP
     if ($argc == 1)
         exit();
-    for ($i = 1; $i < $argc; $i++)
+    $i = 1;
+    while ($i < $argc)
     {
         $word = preg_split("/ +/", trim($argv[$i]));
         $all_str = array_merge((array)$all_str, (array)$word);
+        $i++;
     }
     $sorted = array();
     function ft_sort($a, $b)

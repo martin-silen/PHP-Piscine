@@ -5,7 +5,7 @@
         $i = 0;
 		while ($i < $argc)
         {
-            $str = trim(preg_replace("/\s+", " ", $argv[1])); //$argv skall kanske vara $argv[$i]
+            $str = trim(preg_replace("/\s+/", " ", $argv[1]));
             $tmp_arr = explode(" ", $str);
 			$i++;
         }

@@ -4,12 +4,7 @@
 
 	while ($i < count($argv))
 	{
-		$i++;
 		echo ("$argv[$i]\n");
+		$i++;
 	}
-
 ?>
-
-/*
-Count = Counts all elements in an array or in a Countable object
-*/
