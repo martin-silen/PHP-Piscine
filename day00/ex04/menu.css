@@ -1,94 +1,53 @@
-body {
-	margin: 0;
-	padding: 0;
+.parent {
+    display: block;
+    position: relative;
+    float: left;
+    line-height: 30px;
+    background-color: #333;
+    border-right:#CCC 1px solid;
 }
-
+.parent a {
+    margin: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.parent:hover > ul {
+    display: block;
+    position: absolute;
+}
+.child {
+    display: none;
+}
+.child li {
+    background-color: #333;
+    line-height: 30px;
+    border-bottom:#CCC 1px solid;
+    border-right:#CCC 1px solid; 
+    width:100%;
+}
+.child li a {
+    color: #ffffff;
+}
 ul {
-	display: block;
-	padding: 0;
-	margin: 0;
-	list-style: none;
+    list-style: none;
+    margin: 0;
+    padding: 0px; 
+    min-width:10em;
+}
+ul ul ul {
+    left: 100%;
+    top: 0;
+    margin-left:1px;
 }
 
-a {
-	text-decoration: none;
-}
-
-/*Menu*/
-ul.menu > li {
-	position: relative;
-	float: left;
-}
-
-ul.menu > li > a {
-	display: block;
-	background-color: #333;
-	text-align: center;
-	padding: 10px 15px 10px 15px; 
-	font-size: 1.5vw;
-	color: #ffffff; 
-}
-
-ul.menu >li > a:hover {
-	background-color: #04AA6D;
-}
-
-/*Submenu*/
-ul.submenu {
-    display: none;
-    position: absolute;
-    width: 120px;
-    top: 40px;
-    left: 0;
-    background-color: white;
-}
-
-ul.submenu > li {
-    display: block;
-}
-
-ul.submenu > li > a {
-    display: block;
-    padding: 10px;
-    color: white;
-    background-color: #333;
-    text-decoration: none;
-}
-
-ul.submenu > li > a:hover {
+li:hover {
     background-color: #04AA6D;
 }
-
-ul.menu > li:hover > ul.submenu {
-    display: block;
-}
-
-/*Sub-Submenu*/
-ul.sub-submenu {
-    display: none;
-    position: absolute;
-    width: 120px;
-    top: 40px;
-    left: 0;
-    background-color: white;
-}
-
-ul.sub-submenu > li {
-    display: block;
-}
-
-ul.sub-submenu > li > a {
-    display: block;
-    padding: 10px;
-    color: white;
-    background-color: #333;
-    text-decoration: none;
-}
-
-ul.sub-submenu > li > a:hover {
+.parent li:hover {
     background-color: #04AA6D;
 }
-
-ul.menu > li:hover > ul.submenu > li:hover > ul.sub-submenu {
-    display: block;
+.expand {
+    font-size: 12px;
+    float: right;
+    margin-right: 5px;
 }

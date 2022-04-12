@@ -1,10 +1,10 @@
-#!/usr/bin/env php
+#!/usr/bin/php
 <?php
 	$i = 0;
-	while (i < 1000)
+	while ($i < 1000)
 	{
 		echo "x";
-		i++;
+		$i++;
 	}
 	echo "\n";
 ?>

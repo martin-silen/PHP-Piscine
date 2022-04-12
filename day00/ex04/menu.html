@@ -2,55 +2,57 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="menu.css">
+	<link rel="stylesheet" href="menu.css">
 	<title>Menu</title>
 </head>
 <body>
-	<header>
-	<ul class="menu">
-		<li>
-			<a href="#">Fastfood</a>
-			<ul class="submenu">
-				<li><a href="#">Pizza</a></li>
-				<li><a href="#">Hamburger</a></li>
-				<li><a href="#">Hot Dogs</a></li>
-				<li><a href="#">Tacos</a>
-					<ul class="sub-submenu"></ul>
-					<li><a href="#">Mexican</a></li>
-					<li><a href="#">Kuban</a></li>
-					<li><a href="#">African</a></li>
-				</li>
-				
-			</ul>
-		</li>
 
-		<li>
-			<a href="#">Meat</a>
-			<ul class="submenu">
-				<li><a href="#">T-Bone Steak</a></li>
-				<li><a href="#">Wagyu Beef</a></li>
-				<li><a href="#">Lamb</a></li>
+    <ul id="menu">
+	<li class="parent"><a href="#">Fast Food</a>
+	<ul class="child">
+		<li class="parent"><a href="#">Pizza <span class="expand">»</span></a>
+			<ul class="child">
+			<li><a href="#">Margarita</a></li>
+			<li><a href="#">Pepperoni</a></li>
+			<li><a href="#">Ham</a></li>
 			</ul>
 		</li>
-
-		<li>
-			<a href="#">Sea Food</a>
-			<ul class="submenu">
-				<li><a href="#">Prawns</a></li>
-				<li><a href="#">Mussels</a></li>
-				<li><a href="#">Crab</a></li>
-			</ul>
-		</li>
-
-		<li>
-			<a href="#">Pasta</a>
-			<ul class="submenu">
-				<li><a href="#">Meatball</a></li>
-				<li><a href="#">Vegeterian</a></li>
-				<li><a href="#">Carbonara</a></li>
-			</ul>
-		</li>
+		<li><a href="#">Burgers</a></li>
+		<li><a href="#">Hotdogs</a></li>
+		<li><a href="#">Tacos</a></li>
 	</ul>
-	</header>
+	</li>
+	<li class="parent"><a href="#">Pasta</a>
+	<ul class="child">			
+		<li><a href="#">Carbonara</a></li>
+		<li><a href="#">Meatballs</a></li>
+		<li><a href="#">Vegeterian</a></li>
+		<li><a href="#">Crema di Pollo</a></li>
+	</ul>
+	</li>
+	<li class="parent"><a href="#">Seafood</a>
+	<ul class="child">			
+		<li><a href="#">Whitefish</a></li>
+		<li class="parent"><a href="#">Salmon <span class="expand">»</span></a>
+			<ul class="child">
+			<li><a href="#">Graved Salmon</a></li>
+			<li><a href="#">Prawns</a></li>
+			<li><a href="#">Oysters</a></li>
+			<li class="parent"><a href="#">Shellfish <span class="expand">»</span></a>
+                <ul class="child">
+                    <li><a href="#">Mussels</a></li>
+                    <li><a href="#">Crayfish</a></li>
+                    <li><a href="#">Crab</a></li>
+					<li><a href="#">Lobster</a></li>
+                    </ul></li>
+			</ul>
+		</li>
+		<li><a href="#">Cod</a>
+		</li>
+		<li><a href="#">Sea bass</a></li>
+	</ul>
+	</li>
+	</ul>
+    
 </body>
 </html>
