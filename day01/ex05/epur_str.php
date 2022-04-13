@@ -4,6 +4,6 @@
     {
         $word = preg_split("/ +/", trim($argv[1]));
         print_r(implode(" ", $word));
-        print("\n");
+        echo("\n");
     }
 ?>
