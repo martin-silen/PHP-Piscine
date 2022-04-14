@@ -1,18 +1,22 @@
 #!/usr/bin/php
 <?php
-if ($argc == 2)
-{
-    $file = fopen($argv[1], 'r');
-    while (!feof($file))
-    {
-        $line = fgets($file);
-        $line = preg_replace_callback('/<a.*?title="(.*?)">/', function ($matches) {
-            return (str_replace($matches[1], strtoupper($matches[1]), $matches[0]));
-        }, $line);
-        $line = preg_replace_callback('/<a.*?>(.*?)</', function ($matches) {
-            return (str_replace($matches[1], strtoupper($matches[1]), $matches[0]));
-        }, $line);
-        echo $line;
+
+    function links($match) {
+        $result = $match[0];
+        $result = preg_replace_callback("/title=\"(.*?)\"/is", 
+        function ($text) { 
+            return "title=\"".strtoupper($text[1])."\""; }, 
+            $result);
+        $result = preg_replace_callback("/>.+?</s", function ($text) {
+             return strtoupper($text[0]); },
+              $result);
+        return $result;
     }
-}
+    if($argc == 2 && file_exists($argv[1])) {
+        $page = file_get_contents($argv[1]);
+        $page = preg_replace_callback("/<a.*?<\/a>/is", "links", $page);
+        echo $page;
+    }
+
+
 ?>
