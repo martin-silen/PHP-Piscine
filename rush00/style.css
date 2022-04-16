@@ -1,0 +1,69 @@
+body {
+	background-color: #CCC;
+}
+
+nav {
+	width: 100%;
+	background-color: aqua;
+	position: fixed;
+}
+
+.menu {
+	display: block;
+    position: relative;
+    float: right;
+    background-color: #333;
+    border-right:#CCC 1px solid;
+	width: 100%;
+	height: 10vw;
+}
+
+a {
+	display: block;
+	float: right;
+	padding: 3%;
+	background-color: #333;
+	text-decoration: none;
+	color: white;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px; 
+    min-width:10em;
+}
+
+li {
+	display: inline;
+	padding: 2%;
+	font-size: 3vw;
+}
+
+.product-display {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.product1 {
+	background-color: blue;
+	border: 1px solid white;
+	width: 300px;
+	height: 400px;
+	margin-top: 20%;
+	margin-left: 5%;
+}
+
+hr {
+	margin: 10%;
+}
+
+footer div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font: monospace;
+	font-weight: 700;
+}
