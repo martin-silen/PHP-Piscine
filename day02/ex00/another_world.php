@@ -1,10 +1,9 @@
 #!/usr/bin/php
-<?php
-	$i = 0;
-	while ($i < count($argv)) 
-	{
-		$str = trim(preg_replace("/\s+/", " ", $argv[1]));
-		$i++;
-	}
-	echo ($str."\n");
+
+	<?php
+	if ($argc == 1)
+		exit();
+	$str = $argv[1];
+	$str = trim(preg_replace("/\s+/", " ", $str));
+	echo($str."\n");
 ?>
