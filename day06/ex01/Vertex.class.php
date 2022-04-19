@@ -51,7 +51,7 @@
 		}
 
 		public function doc() {
-			if ($str = file_get_contents('Color.doc.txt')) {
+			if ($str = file_get_contents('Vertex.doc.txt')) {
 				echo $str;
 			}
 			else {
