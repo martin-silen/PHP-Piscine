@@ -1,3 +1,4 @@
+
 <- Vertex ----------------------------------------------------------------------
 Vertex class can be used for setting the coordinates of some point.
 
