@@ -1,4 +1,4 @@
-select COUNT(*) AS 'movies'
+SELECT COUNT(*) AS 'movies'
 FROM `member_history`
 WHERE
 	((DATE(`date`) < DATE('2007-07-27')) AND
