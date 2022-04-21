@@ -1,4 +1,0 @@
-
-Warning: require_once(Color.class.php): failed to open stream: No such file or directory in /Users/msilen/Documents/msilen-git-php/day06/ex01/main_01.php on line 12
-
-Fatal error: require_once(): Failed opening required 'Color.class.php' (include_path='.:') in /Users/msilen/Documents/msilen-git-php/day06/ex01/main_01.php on line 12

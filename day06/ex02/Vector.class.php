@@ -11,10 +11,16 @@
 
 		static $verbose = false;
 
-		public function getX(){return $this->_x;}
-		public function getY(){return $this->_y;}
-		public function getZ(){return $this->_z;}
-		public function getW(){return $this->_w;}
+		public function getX() {
+			return $this->_x;
+		} public function getY() {
+			return $this->_y;
+		} public function getZ() {
+			return $this->_z;
+		} public function getW() {
+			return $this->_w;
+		}
+
 		function __construct(array $arr){
 			if (!isset($arr['dest']))
 			{
@@ -28,8 +34,10 @@
 			$this->_x = $arr['dest']->getX() - $arr['orig']->getX();
 			$this->_y = $arr['dest']->getY() - $arr['orig']->getY();
 			$this->_z = $arr['dest']->getZ() - $arr['orig']->getZ();
+
 			if (($arr['dest']->getW()) !== NULL)
 				$this->_w = $arr['dest']->getW() - $arr['orig']->getW();
+				
 			if (self::$verbose == true)
 			{
 				printf("Vector( x:%.2f, y:%.2f, z:%.2f, w:%.2f ) constructed" . PHP_EOL,
