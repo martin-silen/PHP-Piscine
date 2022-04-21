@@ -1,18 +1,9 @@
 <?php
-	class Fighter {
-		private $name;
-
-		public function __construct($str) {
-			if ($str) {
-				$this->$name = $str;
-			} else {
-				$this->$name = NULL;
-			}
-		}
-		public function __tostring() {
-			if ($this->$name) {
-				return($this->$name);
-			}
+	abstract class Fighter {
+		public $type;
+		abstract function fight($target);
+		public function __construct($type) {
+			$this->type = $type;
 		}
 	}
 ?>

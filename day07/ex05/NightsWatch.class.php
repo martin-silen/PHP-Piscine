@@ -1,15 +1,16 @@
 <?php
-	class NightsWatch implements IFighter {
-		private $_fight;
+	require_once('IFighter.class.php');
 
-		public function recruit ($meat) {
-			if ($meat instanceof IFighter) {
-				$_fight .= $meat->fight();
-			}
-		}
+	class Nightswatch implements IFighter {
+		private $fighters = array();
 
 		public function fight() {
-			print($_fight);
+			foreach ($this->fighters as $f)
+				if (get_class($f) != 'MaesterAemon')
+					$f->fight();
+		}
+		public function recruit($new) {
+			$this->fighters[] = $new;
 		}
 	}
 ?>
