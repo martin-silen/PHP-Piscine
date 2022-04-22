@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		body {
+			background-color: darkgreen;
+			display: flex;
+			justify-content: center;
+		}
+		.container {
+			display: flex;
+			border: 1px solid white;
+			padding: 10%;
+			width: 300px;
+			align-items: center;
+			margin-top: 20%;
+		}
+		form {
+			display: flex;
+			align-items: center;
+			justify-items: center;
+			width: 300px;
+			justify-content: space-around;
+		}
+		input {
+			margin: 2%;
+		}
+		#button {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 3%;
+			background-color: transparent;
+			color: white;
+			font-size: 1em;
+			margin: 2%;
+		}
+	</style>
+
+	<script>
+		let input1;
+		let input2;
+		let operator;
+		let calculator;
+	
+		window.onload = function() {
+			input1 = document.getElementById("input1");
+			input2 = document.getElementById("input2");
+			operator = document.getElementById("operator");
+			calculator = document.getElementById("calculator");
+			calculator.addEventListener("submit", calculate);
+			window.setInterval(sendAlert, 30000);
+		}
+
+		function checkInput(input1, input2) {
+			if (input1 >= 0 && input2 >= 0)
+				return true;
+			return false;
+		}
+	
+		// The event.preventDefault() cancels the event if it doesn't occur
+		function calculate() {
+			event.preventDefault();
+			var left = Number(input1.value);
+			var right = Number(input2.value);
+			if (!checkInput(left, right)) {
+				alert('Error :(');
+				return ;
+			}
+			switch (operator.value) {
+				case ("add"):
+					show(left + right);
+					break
+				case ("minus"):
+					show(left - right);
+					break;
+				case ("mult"):
+					show(left * right);
+					break;
+				case ("div"):
+					if (right == 0)
+						show("It's over 9000!");
+					else
+						show(left / right);
+					break;
+				case ("remainder"):
+					if (right == 0)
+						show("It's over 9000!");
+					else
+						show(left % right);
+					break;
+				default:
+					show("Error!");
+			}
+		}
+		
+		function show(result) {
+			alert(result);
+			console.log(result);
+		}
+	
+		function sendAlert() {
+			alert('Please use me...')
+		}
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+		<form action="" id="calculator">
+		<input type="text" id="input1" placeholder="First number" value="">
+			<select id="operator">
+				<option value="add">+</option>
+				<option value="sub">-</option>
+				<option value="mult">*</option>
+				<option value="div">/</option>
+				<option value="remainder">%</option>
+			</select>
+		<input type="text" id="input2" placeholder="Second number" value="">
+		<input type="submit" value="Try me!" id="button">
+		</form>	
+	</div>
+</body>
+</html>
+
