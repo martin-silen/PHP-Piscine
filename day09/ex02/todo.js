@@ -1,44 +1,43 @@
-let cookies = document.cookie.split(';');
-let cookie_id = cookies.length + 1;
-let parent = document.getElementById('ft_list');
+var button = document.getElementById('add');
+var list = document.getElementById('ft_list');
+var n = 0;
 
-if (cookies)
-{
-	cookies.forEach(function(item){
-		let div = document.createElement('div');
-		let todo = item.split('=');
-		if (!todo[1])
-			return;
-		div.innerHTML = todo[1];
-		div.setAttribute('id', todo[0]);
-		div.setAttribute('onclick', 'delElem(id)');
-		if (todo[0] > cookie_id)
-			cookie_id = Number(todo[0]);
-		parent.insertBefore(div, parent.firstChild);
-	});
+button.addEventListener('click', function() {
+	var input = prompt('Enter your task, please:', '');
+	if (input != '' && input != null) {
+		n++;
+		addToList(input, n);
+		var date = new Date(new Date().getTime() + 3600 * 1000);
+		document.cookie = n + '=' + input + '; expires=' + date;
+	}
+});
+
+function addToList(input, n) {
+	var div = document.createElement('div');
+	var text = document.createTextNode(input);
+	div.appendChild(text);
+	div.setAttribute('class', 'task');
+	div.setAttribute('id', n);
+	div.setAttribute('onclick', 'remove_task(' + n + ')');
+	list.insertBefore(div, list.firstChild);
 }
 
-function newTask()
-{
-	let task = prompt("Write your new task here:");
-	if (task.trim())
-	{
-		cookie_id++;
-		let div = document.createElement('div');
-		div.innerHTML = task;
-		div.setAttribute('id', cookie_id);
-		div.setAttribute('onclick', 'delElem(id)');
-		parent.insertBefore(div, parent.firstChild);
-		document.cookie = cookie_id + "=" + task + "; expires=Thu, 01 Jan 2021 00:00:00 UTC";
+function remove_task(num) {
+	var div = document.getElementById(num);
+	if (confirm('Do you want to remove the task?')) {
+		var date = new Date(0);
+		document.cookie = num + '=null; expires=' + date;
+		list.removeChild(div);
 	}
 }
 
-function delElem(id)
-{
-	if (confirm('Are you sure you want to delete task ' + id))
-	{
-		let elem = document.getElementById(id);
-		elem.parentNode.removeChild(elem);
-		document.cookie = id + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+window.onload = function() {
+	if (document.cookie != '') {
+		arr = document.cookie.split('; ');
+		for (cook in arr) {
+			elem = arr[cook].split('=');
+			addToList(elem[1], elem[0]);
+			n = elem[0];
+		}
 	}
 }

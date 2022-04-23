@@ -3,9 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Balloon</title>
+	<script
+	src="http://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
 	<style>
+		
 		.container {
 			margin: 0 auto;
+			display: flex;
 		}
 		.balloon {
 			margin: 0 auto;
@@ -13,7 +19,6 @@
 			width: 200px;
 			height: 200px;
 			border-radius: 50%;
-			cursor: pointer;
 		}
 	</style>
 </head>
@@ -21,14 +26,17 @@
 	<div class="container">
 	<div class="balloon" id="balloon"></div>
 	</div>
-	<script>
+
+	<script type="application/javascript">
+
 		const colors = ['red', 'green', 'blue'];
-		let ball = document.getElementById('balloon');
-		let size = ball.clientHeight;
+		let ball = $("#balloon");
+		let size = ball.height();
 		let clicks = 0;
 		i = 0;
 
-		balloon.addEventListener('click', () =>
+		
+		$("#balloon").on("click", () =>
 		{
 			clicks++;
 			if (i == 2)
@@ -39,12 +47,13 @@
 				size += 10;
 			else
 				size = 200;
-			ball.style.height = size + 'px';
-			ball.style.width = size + 'px';
-			ball.style.backgroundColor = colors[i];
+			ball.height(size + 'px');
+			ball.width(size + 'px');
+			ball.css("background", colors[i]);
 		})
-
-		balloon.addEventListener('mouseleave', () =>
+	
+		
+		$("#balloon").on('mouseleave', () =>
 		{
 			if (!clicks)
 			{
@@ -54,9 +63,9 @@
 					i--;
 				if (size > 200)
 					size -= 5;
-				ball.style.height = size + 'px';
-				ball.style.width = size + 'px';
-				ball.style.backgroundColor = colors[i];
+				ball.height(size + 'px');
+				ball.width(size + 'px');
+				ball.css("background", colors[i]);
 			}
 			clicks = 0;
 		})
