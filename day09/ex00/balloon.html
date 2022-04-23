@@ -20,58 +20,44 @@
 	<div class="container">
 	<div class="balloon" id="balloon"></div>
 	</div>
-	<script type="text/javascript">
-	
-		const balloon = document.getElementById('balloon');
-		balloon.addEventListener('click', inflate);
-		balloon.addEventListener('mouseout', getOut);
-		
-		const color = ['red', 'green', 'blue'];
-		let i = 0;
-		let clicked = false;
-
-		// Inflate
-		function inflate() { 
-			if (++i > 2) {
+	<script>
+		const colors = ['red', 'green', 'blue'];
+		let ball = document.getElementById('balloon');
+		let size = ball.clientHeight;
+		let clicks = 0;
+		i = 0;
+		balloon.addEventListener('click', () =>
+		{
+			clicks++;
+			if (i == 2)
 				i = 0;
-			}
-			const ball_width = balloon.offsetWidth;
-			console.log(ball_width);
-			const ball_height = balloon.offsetHeight;
-			let step = 10;
-			if (ball_width > 420) {
-				balloon.style.width = '200px';
-				balloon.style.height = '200px';
-			} else {
-				balloon.style.width = ball_width + step + 'px';
-				balloon.style.height = ball_height + step + 'px';
-			}
-			balloon.style.background = color[i];
-
-		}
-	
-		// Mouse leave
-		function getOut() {
-			clicked === true;
-				if (--i < 0) {
+			else
+				i++;
+			if (size + 10 <= 420)
+				size += 10;
+			else
+				size = 200;
+			ball.style.height = size + 'px';
+			ball.style.width = size + 'px';
+			ball.style.backgroundColor = colors[i];
+		})
+		balloon.addEventListener('mouseleave', () =>
+		{
+			if (!clicks)
+			{
+				if (i == 0)
 					i = 2;
-				}
-				let ball_width = balloon.offsetWidth;
-				let ball_height = balloon.offsetHeight;
-				
-				if (ball_width > 420) {
-					balloon.style.width = '200px';
-					balloon.style.height = '200px';
-				}
-				else if (ball_width > 200) {
-					balloon.style.width = ball_width - 5 + 'px';
-					balloon.style.height = ball_height - 5 + 'px';
-				} 
-				balloon.style.background = color[i];
-				console.log(ball_width);
-				clicked === false;
-		}
-		</script>
+				else
+					i--;
+				if (size > 200)
+					size -= 5;
+				ball.style.height = size + 'px';
+				ball.style.width = size + 'px';
+				ball.style.backgroundColor = colors[i];
+			}
+			clicks = 0;
+		})
+	</script>
 </body>
 
 </html>
