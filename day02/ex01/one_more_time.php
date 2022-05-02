@@ -41,18 +41,4 @@
     else
         echo "Wrong Format\n";
 
-/*
-    First we set the timezone settings
-    Then we have (line 16) an error check
-    Then IF we match the inputted date by using regex and store it to $out and make the letters lowercase
-        Then we check inside the IF statement that if the month or day is not in Argv[1] we echo "wrong format"
-        Then we assign to $index the return value of ft_get_index() where we use a foreach loop 
-
-    preg_match  = Performs a regular expression match
-    in_array    = Checks if a value exists in an array
-    checkdate   = Validate a Gregorian date
-    mktime      = Get Unix timestamp for a date
-
-*/
-
 ?>

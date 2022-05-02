@@ -32,16 +32,4 @@
     print_r(implode("\n", $sorted));
     echo "\n";
 
-
-/*
-implode = Join array elements with a string
-preg_split = Split string by a regular expression
-array_merge = Merge one or more arrays
-array = Create array
-stripos = Find the numeric position of the first occurrence of needle in the haystack string.
-usort = Sort an array by values using a user-defined comparison function
-array_push = push one or more elements onto the end of array
-print_r = Prints human-readable information about a variable
-implode = Join array elements with a string
-*/
 ?>

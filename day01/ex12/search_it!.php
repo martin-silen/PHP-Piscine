@@ -23,7 +23,4 @@
         else if ($key == '0' && $search == '0')
             echo "$value\n";
     }
-	/*
-
-	*/
 ?>

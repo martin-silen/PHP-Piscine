@@ -5,27 +5,26 @@
 		public $blue;
 		static $verbose = false;
 
-		//65536 is a dark color | https://convertingcolors.com/decimal-color-65536.html
 		public function __construct(array $kwargs) {
-			if (isset($kwargs['rgb'])) {			// Take the color from the long string and store it
+			if (isset($kwargs['rgb'])) {
 				$color = intval($kwargs['rgb'], 10);
 				$this->red = $color / 65536;
 				$this->green = $color % 65536 / 256;
 				$this->blue = $color % 65536 % 256;
 
-			} else if (isset($kwargs['red']) && isset($kwargs['green']) && isset($kwargs['blue'])) { //simply store the colors
+			} else if (isset($kwargs['red']) && isset($kwargs['green']) && isset($kwargs['blue'])) {
 				$this->red = intval($kwargs['red'], 10);
 				$this->green = intval($kwargs['green'], 10);
 				$this->blue = intval($kwargs['blue'], 10);
 			}
-			if (self::$verbose) { //Check value of verbose
-				printf($this . " constructed.\n"); //or maybe use printf here?
+			if (self::$verbose) {
+				printf($this . " constructed.\n");
 			}
 		}
 		
 		public function __destruct() {
 			if (self::$verbose) {
-				printf($this . " destructed.\n"); //printf ?
+				printf($this . " destructed.\n");
 			}
 		}
 
@@ -36,7 +35,6 @@
 			return $ret;
 		}
 
-		// Prints out the .doc
 		public function doc() {
 			if ($str = file_get_contents('Color.doc.txt')) {
 				echo $str;
@@ -46,7 +44,6 @@
 			}
 		}
 
-		// Addition
 		public function add($col) {
 			$new = new Color( array(
 				'red' => $this->red + $col->red,
@@ -56,7 +53,6 @@
 			return $new;
 		}
 
-		// Subtraction
 		public function sub($col) {
 			$new = new Color( array(
 				'red' => $this->red - $col->red,
@@ -66,7 +62,6 @@
 			return $new;
 		}
 
-		// Multiply
 		public function mult($factor) {
 			$new = new Color( array(
 				'red' => $this->red * $factor,

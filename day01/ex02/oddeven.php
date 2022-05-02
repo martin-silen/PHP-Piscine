@@ -18,10 +18,3 @@
 		}
 	}
 ?>
-
-/*
-trim = Strip whitespace (or other characters) from the beginning and end of a string
-fgets = Gets line from file pointer. The file pointer must be valid, and must point to a file successfully opened by fopen() 
-feof = Tests for end-of-file on a file pointer.
-is_numeric = checks if the input is numeric or not
-*/
